@@ -1,0 +1,51 @@
+/* デザイントークン（Figmaバリアブル対応表: ../figma-variables.md） */
+:root {
+  /* palette：プリミティブ（生の値）。単体では使わない */
+  --palette-brown-50: #faf6f2;
+  --palette-brown-100: #f3ece5;
+  --palette-brown-200: #e8ddd3;
+  --palette-brown-400: #c8a27a;
+  --palette-brown-500: #6f4e37;
+  --palette-brown-600: #4a3b2e;
+  --palette-brown-700: #3e2f25;
+  --palette-brown-800: #2e241c;
+  --palette-brown-900: #221a14;
+  --palette-white: #ffffff;
+
+  /* color：セマンティック。palette へのエイリアス（var参照） */
+  --color-primary: var(--palette-brown-500);
+  --color-accent: var(--palette-brown-400);
+  --color-text: var(--palette-brown-700);
+  --color-text-inverse: var(--palette-white);
+  --color-bg: var(--palette-brown-50);
+  --color-surface: var(--palette-white);
+  --color-border: var(--palette-brown-200);
+
+  /* spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 64px;
+
+  /* radius */
+  --radius-md: 8px;
+  --radius-full: 999px;
+
+  /* font-size */
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2.5rem;
+}
+
+/* ボーナス：FigmaのDarkモードに対応
+   <html data-theme="dark"> を付けると切り替わる
+   palette 自体は変えず、color の参照先だけ切り替えるのがエイリアスの効能 */
+[data-theme="dark"] {
+  --color-primary: var(--palette-brown-400);
+  --color-text: var(--palette-brown-100);
+  --color-bg: var(--palette-brown-900);
+  --color-surface: var(--palette-brown-800);
+  --color-border: var(--palette-brown-600);
+}

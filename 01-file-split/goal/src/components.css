@@ -1,0 +1,118 @@
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav__link {
+  font-size: 0.875rem;
+}
+
+.nav__link:hover {
+  color: #6f4e37;
+}
+
+.hero {
+  padding: 64px 24px;
+  text-align: center;
+}
+
+/* 急ぎで追加したためセレクタが深い。あとで直す */
+.hero .hero__badge {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 4px 16px;
+  font-size: 0.875rem;
+  color: #ffffff;
+  background-color: #c8a27a;
+  border-radius: 999px;
+}
+
+.hero__title {
+  font-size: 2.5rem;
+  line-height: 1.4;
+  color: #6f4e37;
+}
+
+.hero__text {
+  margin-top: 16px;
+}
+
+.hero__actions {
+  margin-top: 24px;
+}
+
+.features {
+  max-width: 960px;
+  margin-inline: auto;
+  padding: 40px 24px 64px;
+}
+
+.features__title {
+  font-size: 1.5rem;
+  color: #6f4e37;
+}
+
+.features__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.card {
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #e8ddd3;
+  border-radius: 8px;
+}
+
+.card__title {
+  font-size: 1.125rem;
+  color: #6f4e37;
+}
+
+.card__text {
+  margin-top: 8px;
+  font-size: 0.875rem;
+}
+
+.cta {
+  padding: 64px 24px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #6f4e37;
+}
+
+.cta__title {
+  font-size: 1.5rem;
+}
+
+.cta__text {
+  margin-top: 8px;
+}
+
+.cta__actions {
+  margin-top: 24px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 32px;
+  font-size: 1rem;
+  border-radius: 999px;
+  transition: opacity 0.2s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button--primary {
+  color: #ffffff;
+  background-color: #6f4e37;
+}
+
+.button--ghost {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}

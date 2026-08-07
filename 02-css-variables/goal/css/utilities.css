@@ -1,0 +1,9 @@
+.u-text-center {
+  text-align: center;
+}
+
+/* utilities は最後に宣言したレイヤーなので、詳細度で負けても勝てる
+   （!important が不要になった） */
+.u-hidden {
+  display: none;
+}
