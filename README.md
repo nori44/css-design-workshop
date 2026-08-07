@@ -12,7 +12,7 @@
 ## リポジトリの取得（環境構築パートで実施）
 
 ```bash
-git clone <配布予定のGitHubリポジトリURL>
+git clone https://github.com/nori44/css-design-workshop.git
 cd css-design-workshop/01-file-split
 npm install
 ```
