@@ -1,7 +1,9 @@
 /* Beans Coffee スタイルのエントリーポイント
    後に宣言したレイヤーほど優先される */
-@layer reset, base, layout, components, utilities;
+@layer tokens, reset, base, layout, components, utilities;
 
+@import url("tokens.css") layer(tokens);
+@import url("reset.css") layer(reset);
 @import url("reset.css") layer(reset);
 @import url("base.css") layer(base);
 @import url("layout.css") layer(layout);
