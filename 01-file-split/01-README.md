@@ -51,6 +51,7 @@ module.exports = {
 
 `start/index.html` をブラウザで開いておく（分割の前後で見た目が変わらないことの確認用）。
 `index.html` は `dist/style.css` を読み込む設定になっています（`src/` ではない点に注意）。
+`start/dist/style.css` は最初から分割前の状態でリポジトリに含まれているので、`npm run build` を打つ前でも今の時点で見た目を確認できます。
 
 ### 1. 空ファイルを作る（2分）
 
@@ -97,7 +98,7 @@ npm run build
 
 1. ブラウザをリロードして、見た目が変わっていないことを確認
 2. `index.html` のバッジ（`hero__badge`）から `u-hidden` を外す → バッジが表示される
-3. `u-hidden` を戻し、`utilities.css` の `!important` を削除 →ビルドし直す → **それでもバッジは隠れたまま**
+3. `index.html` の`u-hidden` を戻し、`utilities.css` の `!important` を削除 →ビルドし直す → **それでもバッジは隠れたまま**
 
 ## なぜ `!important` を消せたのか
 

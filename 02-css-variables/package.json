@@ -1,0 +1,14 @@
+{
+  "name": "css-design-workshop-02-css-variables",
+  "private": true,
+  "scripts": {
+    "build": "postcss start/src/style.css -o start/dist/style.css",
+    "watch": "postcss start/src/style.css -o start/dist/style.css --watch",
+    "build:goal": "postcss goal/src/style.css -o goal/dist/style.css"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0"
+  }
+}
