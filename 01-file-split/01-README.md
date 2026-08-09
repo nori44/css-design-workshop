@@ -16,10 +16,7 @@
 
 ## 事前準備（環境構築パートで実施済みの想定）
 
-```bash
-cd css-design-workshop/01-file-split
-npm install
-```
+`npm install` は**リポジトリのルート**（`css-design-workshop/`）で1回実行済みのはずです（npm workspacesで①②まとめてインストールされます）。このフォルダで改めて実行する必要はありません。
 
 `package.json` の中身：
 
@@ -85,14 +82,22 @@ reset.css  base.css  layout.css  components.css  utilities.css
 
 ### 4. ビルドする（2分）
 
+このフォルダにいるなら：
+
 ```bash
 npm run build
 ```
 
-`start/dist/style.css` が更新され、5ファイルが1つに束ねられます（各レイヤーは`@layer reset { ... }`のように展開される）。
+リポジトリのルートにいるなら：
+
+```bash
+npm run build:01
+```
+
+どちらも同じ結果です。`start/dist/style.css` が更新され、5ファイルが1つに束ねられます（各レイヤーは`@layer reset { ... }`のように展開される）。
 ここが今回の肝です。**ソースは5ファイルのまま読み書きしつつ、ブラウザに届くのは1リクエスト分の1ファイル**になります。
 
-編集のたびにビルドし直すのが面倒な場合は `npm run watch` でファイル変更を監視できます。
+編集のたびにビルドし直すのが面倒な場合は、このフォルダで `npm run watch` を実行するとファイル変更を監視できます。
 
 ### 5. 動作確認（3分）
 
@@ -110,6 +115,5 @@ npm run build
 
 ## goal を自分でビルドし直したい場合
 
-```bash
-npm run build:goal
-```
+このフォルダから：`npm run build:goal`
+リポジトリのルートから：`npm run build:01:goal`

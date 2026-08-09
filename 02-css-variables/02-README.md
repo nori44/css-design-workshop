@@ -13,13 +13,7 @@
 
 ## 事前準備
 
-```bash
-cd css-design-workshop/02-css-variables
-npm install
-```
-
-環境構築パートで`npm install`したのは実践①のフォルダだけなので、実践②に入ったらまずここで一度実行してください。
-（`postcss` / `postcss-cli` / `postcss-import` を使います。実践①と同じ構成です）
+`npm install` は環境構築パートで**リポジトリのルート**で実行済みのはずです（npm workspacesで①②まとめてインストール済み）。このフォルダで改めて実行する必要はありません。
 
 ## 手順
 
@@ -56,11 +50,7 @@ npm install
 /* 以下そのまま */
 ```
 
-ここまでできたら一度ビルドしておきましょう：
-
-```bash
-npm run build
-```
+ここまでできたら一度ビルドしておきましょう。このフォルダから `npm run build`、リポジトリのルートからなら `npm run build:02` です。
 
 ### 3. ハードコードされた値を置き換える（6分）
 
@@ -79,18 +69,18 @@ npm run build
 `1.25rem` や `12px 32px` のような1回しか出ない値は、直書きのまま残して構いません。
 「どこまでトークン化するか」自体が実践③で決めるルールの1つです。
 
-編集したら、その都度 `npm run build`（または `npm run watch` で自動反映）を忘れずに。`index.html` が読み込むのは `dist/style.css` なので、ビルドしないと変更が反映されません。
+編集したら、その都度ビルド（このフォルダなら `npm run build`、ルートなら `npm run build:02`。または `npm run watch` で自動反映）を忘れずに。`index.html` が読み込むのは `dist/style.css` なので、ビルドしないと変更が反映されません。
 
 ### 4. 動作確認（3分）
 
-1. `npm run build` を実行してリロードし、見た目が変わっていないことを確認
-2. `tokens.css` の `--palette-brown-500` を `#2f6f4e`（緑）に変えて `npm run build` → リロード
+1. ビルドしてリロードし、見た目が変わっていないことを確認
+2. `tokens.css` の `--palette-brown-500` を `#2f6f4e`（緑）に変えてビルド → リロード
    → ロゴ・見出し・ボタン・CTAが一斉に変わる（確認したら戻して再ビルド）
 
 ## ボーナス①：エイリアスの効能を確認する
 
 `goal/src/tokens.css` は `palette`（プリミティブ）→ `color`（エイリアス）の2層構成です。
-`--palette-brown-500` の値だけを変えて `npm run build:goal` → リロードすると、それを参照している `--color-primary` も連動して変わります。
+`--palette-brown-500` の値だけを変えて `npm run build:goal`（ルートからなら `npm run build:02:goal`） → リロードすると、それを参照している `--color-primary` も連動して変わります。
 「生の値は1箇所、意味づけ（どこに使うか）は`color/*`側」と分けておくと、ブランドカラーの変更が1点集中で済むことを体感できます。
 
 ## ボーナス②：Figmaの「モード」をCSSで再現

@@ -1,0 +1,14 @@
+{
+  "name": "css-design-workshop",
+  "private": true,
+  "workspaces": [
+    "01-file-split",
+    "02-css-variables"
+  ],
+  "scripts": {
+    "build:01": "npm run build --workspace=01-file-split",
+    "build:02": "npm run build --workspace=02-css-variables",
+    "build:01:goal": "npm run build:goal --workspace=01-file-split",
+    "build:02:goal": "npm run build:goal --workspace=02-css-variables"
+  }
+}
