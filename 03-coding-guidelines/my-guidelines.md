@@ -90,10 +90,10 @@
 ## 2. ファイル構成と Cascade Layers
 
 **レイヤーの構成順**：
-- Cascade Layers は `reset, base, components, utilities` の4層を基本とし、必要になったら追加してよい
+- Cascade Layers は `reset, base, components, pages, utilities` の5層を基本とする。
 
 ```css
-@layer reset, base, components, utilities;
+@layer reset, base, components, pages, utilities;
 ```
 
 **各レイヤーの役割**：
@@ -102,12 +102,13 @@
 | reset | ブラウザデフォルトスタイルのリセット・正規化 |
 | base | body, a, img, 見出しなどHTML要素の基本スタイル |
 | components | BEMで定義するUIコンポーネント |
+| pages | ページごとのスタイル |
 | utilities | .u-hidden など単一目的の補助クラス |
 
 **ファイル分割の方針**：
 - `components` は原則としてBlock単位でファイルを分ける（`.card` → `card.css`）
 - `reset`、`base`、`utilities` は役割ごとにファイルをまとめる
-- ページ固有のスタイルが増えた場合は、必要に応じてページ単位でファイルを分ける
+- ページ固有のスタイルについては、pages配下にページごとのファイルを作成する（`page_about`, `page_nesw`など）
 - 行数だけを基準にせず、目的のスタイルを探しやすい構成を優先する
 
 **なぜ**：
@@ -116,15 +117,13 @@
 ## 3. デザイントークンの運用
 
 **トークン化の基準**：
-- **2回以上使う値はトークン化する**（1回目は直書きでよい）
-  - なぜ：使うか分からない値まで先回りでトークン化すると、トークン一覧が育ちすぎるため
+- **使う値はすべてトークン化する**
 - トークン名はFigmaと多少ずれてもよい。ただし対応表をREADMEに残す
 
 **Figmaとの対応ルール**：
 - FigmaのVariables・StylesとCSSのデザイントークンは、できるだけ意味が対応する名前にする
 - FigmaとCSSで名称を完全に一致させることは必須としない
 - 名称が異なる場合は、対応関係をREADMEに記載する
-- Figmaに定義されている値をすべてトークン化するのではなく、実装上必要な値だけをCSS側で管理する
 
 | Figma | CSS |
 | --- | --- |
