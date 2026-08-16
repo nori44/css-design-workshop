@@ -9,9 +9,9 @@
 
 ## ゴール
 
-- `style.css` を **reset / base / layout / components / utilities** の5ファイルに分割する
+- `style.css` の中身を **reset / base / layout / components / utilities** の5ファイルに分割する（`style.css` 自体は削除せず、分割後は各ファイルを束ねるハブにする）
 - `@layer` でレイヤーの優先順位を宣言する
-- `npm run build` でPostCSSが5ファイルを**1つのdist/style.cssにバンドル**することを確認する
+- `npm run build` でPostCSSが `style.css` 経由で5ファイルを**1つのdist/style.cssにバンドル**することを確認する
 - 分割の副産物として、`utilities` の `!important` を撤去する
 
 ## 事前準備（環境構築パートで実施済みの想定）
